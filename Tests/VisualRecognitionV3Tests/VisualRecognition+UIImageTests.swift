@@ -140,11 +140,6 @@ class VisualRecognitionUIImageTests: XCTestCase {
             XCTAssertEqual(gender!.gender, "MALE")
             XCTAssertGreaterThanOrEqual(gender!.score!, 0.75)
 
-            // verify the identity
-            let identity = face?.faces.first?.identity
-            XCTAssertEqual(identity!.name, "Barack Obama")
-            XCTAssertGreaterThanOrEqual(identity!.score!, 0.75)
-
             expectation.fulfill()
         }
         waitForExpectations()

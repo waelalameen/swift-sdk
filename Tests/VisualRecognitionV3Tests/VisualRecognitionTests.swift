@@ -1088,11 +1088,6 @@ class VisualRecognitionTests: XCTestCase {
             XCTAssertEqual(gender!.gender, "MALE")
             XCTAssertGreaterThanOrEqual(gender!.score!, 0.75)
 
-            // verify the identity
-            let identity = face?.faces.first?.identity
-            XCTAssertEqual(identity!.name, "Barack Obama")
-            XCTAssertGreaterThanOrEqual(identity!.score!, 0.75)
-
             expectation.fulfill()
         }
         waitForExpectations()
@@ -1135,11 +1130,6 @@ class VisualRecognitionTests: XCTestCase {
             XCTAssertEqual(gender!.gender, "MALE")
             XCTAssertGreaterThanOrEqual(gender!.score!, 0.75)
 
-            // verify the identity
-            let identity = face?.faces.first?.identity
-            XCTAssertEqual(identity!.name, "Barack Obama")
-            XCTAssertGreaterThanOrEqual(identity!.score!, 0.75)
-
             expectation.fulfill()
         }
         waitForExpectations()
@@ -1181,12 +1171,6 @@ class VisualRecognitionTests: XCTestCase {
                 let gender = image.faces.first?.gender
                 XCTAssert(gender!.gender == "MALE")
                 XCTAssert(gender!.score! >= 0.75)
-
-                // verify the identity
-                if let identity = image.faces.first?.identity {
-                    XCTAssertEqual(identity.name, "Tiger Woods")
-                    XCTAssert(identity.score! >= 0.75)
-                }
             }
 
             expectation.fulfill()
